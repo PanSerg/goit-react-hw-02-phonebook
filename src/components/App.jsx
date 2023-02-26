@@ -1,5 +1,15 @@
-export const App = () => {
-  return (
+import { Component } from "react";
+
+
+export class ContactForm extends Component {
+  state = {
+    name: '',
+    number: ''
+  };
+
+  render() {
+  
+    return(
     <div
       style={{
         height: '100vh',
@@ -12,5 +22,6 @@ export const App = () => {
     >
       React homework template
     </div>
-  );
+    );
+  };
 };
