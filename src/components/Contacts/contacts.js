@@ -13,7 +13,7 @@ export const Contact = ({ dataContact, onDelete }) => {
                             onClick={() => {
                                 onDelete(data.id);
                             }}
-                        >X</button>
+                        >Delete</button>
                     </li>
                 ))}
             </ul>
