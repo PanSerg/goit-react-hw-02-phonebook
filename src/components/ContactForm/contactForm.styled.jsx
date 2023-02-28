@@ -10,5 +10,4 @@ export const StyleForm = styled.form`
     max-width: 200px;
     margin-top: 30px;
     margin-left: 10px;
-   
 `;
