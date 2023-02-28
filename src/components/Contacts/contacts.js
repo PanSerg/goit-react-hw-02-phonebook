@@ -1,23 +1,25 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { ContactStyle } from "./contacts.styled";
+import { ButtonsStyle } from "components/buttonsStyle.styled";
 
 export const Contact = ({ dataContact, onDelete }) => {
     return (
-        <div>
+        <ContactStyle>
             <h2>Contacts</h2>
             <ul>
                 {dataContact.map(data => (
                     <li key={data.id}>
                         {data.name}: {data.number}
-                        <button type="button"
+                        <ButtonsStyle type="button"
                             onClick={() => {
                                 onDelete(data.id);
                             }}
-                        >Delete</button>
+                        >Delete</ButtonsStyle>
                     </li>
                 ))}
             </ul>
-        </div>
+        </ContactStyle>
     );
 };
 

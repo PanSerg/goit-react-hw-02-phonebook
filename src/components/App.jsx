@@ -57,6 +57,7 @@ export class App extends Component {
     const visibleStat = this.filterRender();
     return (
       <div>
+        <h2>Phonebook</h2>
         <ContactForm addContactName={this.addContactName} />
         <Filter onChange={this.filterChange} value={this.state.filter} />
         <Contact dataContact={visibleStat} onDelete={this.onDelete} />
