@@ -13,10 +13,10 @@ export class ContactForm extends Component {
   };
 
   handleSubmit = evt => {
-      evt.prevent.default();
+      evt.preventDefault();
     const { name, number } = this.state;
     
-      this.props.addContactName(name);
+    this.props.addContactName(name);
     this.setState({ name: '', number: ''})
   };
 
@@ -56,5 +56,5 @@ export class ContactForm extends Component {
 };
 
 ContactForm.propTypes = {
-
+  addContactName: PropTypes.func.isRequired,
 };
