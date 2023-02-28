@@ -57,11 +57,11 @@ export class App extends Component {
   render() {
     const visibleStat = this.filterRender();
     return (
-      <Filter>
+      <div>
         <ContactForm addContact={this.addContactName} />
-        <span onChange={this.filterChange} value={this.state.filter} />
+        <Filter onChange={this.filterChange} value={this.state.filter} />
         <Contact dataContact={visibleStat} onDelete={this.onDelete} />
-      </Filter>
+      </div>
     )
   }
 };
