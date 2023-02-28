@@ -17,16 +17,15 @@ export class App extends Component {
     filter: '',
   };
 
-  addContactName = (name, number) => {
+  addContactName = ({name, number}) => {
     const addContact = {
-      id: nanoid.generate(),
+      id: nanoid(),
       name,
       number,
     };
 
-    const upCont = this.state.contacts.map(({ name }) => name.toLowerCase());
-    const nameToLowerCase = name.toLowerCase();
-    if (upCont.includes(nameToLowerCase)) {
+    const upCont = this.state.contacts.find(( contact ) => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase());
+    if (upCont) {
       return alert(`${name} is already in contacts.`);
     };
 
@@ -58,7 +57,7 @@ export class App extends Component {
     const visibleStat = this.filterRender();
     return (
       <div>
-        <ContactForm addContact={this.addContactName} />
+        <ContactForm addContactName={this.addContactName} />
         <Filter onChange={this.filterChange} value={this.state.filter} />
         <Contact dataContact={visibleStat} onDelete={this.onDelete} />
       </div>
