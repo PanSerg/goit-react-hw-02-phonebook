@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 
 export class ContactForm extends Component {
   state = { ...INITIAL_STATE };
-  
+
   static propTypes = {
     addContactName: PropTypes.func.isRequired,
   };
@@ -25,7 +25,7 @@ export class ContactForm extends Component {
     evt.preventDefault();
     const { name, number } = this.state;
 
-    this.props.addContactName(name);
+    this.props.addContactName(name, number);
     this.setState({ name: '', number: '' });
     this.reset();
   };
