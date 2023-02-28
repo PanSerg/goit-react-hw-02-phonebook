@@ -8,6 +8,10 @@ const INITIAL_STATE = {
 
 export class ContactForm extends Component {
   state = { ...INITIAL_STATE };
+  
+  static propTypes = {
+    addContactName: PropTypes.func.isRequired,
+  };
 
   nameInputId = nanoid();
   numberInputId = nanoid();
@@ -66,6 +70,6 @@ export class ContactForm extends Component {
   }
 };
 
-ContactForm.propTypes = {
-  addContactName: PropTypes.func.isRequired,
-};
+// ContactForm.propTypes = {
+//   addContactName: PropTypes.func.isRequired,
+// };
